@@ -6,8 +6,9 @@ from aiogram import Bot, Dispatcher, html
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from config import TOKEN
-dp = Dispatcher()
+from db import Database
 
+dp = Dispatcher()
 
 
 async def main() -> None:
@@ -16,7 +17,6 @@ async def main() -> None:
     from app.handlers import rt
     dp.include_router(rt)
     await dp.start_polling(bot)
-
 
 if __name__ == "__main__":
     try:
